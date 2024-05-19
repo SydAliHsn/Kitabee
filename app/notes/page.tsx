@@ -32,7 +32,7 @@ const renderDropdownsRecursive = (dirStructure: recursiveDir[]) => {
     );
 };
 
-const page = (props: {}): JSX.Element => {
+const page = (): JSX.Element => {
     const dirStructure: recursiveDir[] = readDirRecursive(process.cwd() + '/data/notes');
 
     return <section>

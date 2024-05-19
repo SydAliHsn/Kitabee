@@ -1,7 +1,7 @@
 import UnderConstruction from '@/components/UnderConstruction';
 import React from 'react';
 
-const upload = (props: {}): JSX.Element => {
+const upload = (): JSX.Element => {
     return <UnderConstruction />;
 };
 
