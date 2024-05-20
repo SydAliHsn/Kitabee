@@ -4,7 +4,10 @@ import { slug } from 'github-slugger'
 import tagData from 'app/tag-data.json'
 import { genPageMetadata } from 'app/seo'
 
-export const metadata = genPageMetadata({ title: 'Tags', description: 'Things I blog about' })
+export const metadata = genPageMetadata({
+  title: 'Tags',
+  description: 'Tags of the available notes.',
+})
 
 export default async function Page() {
   const tagCounts = tagData as Record<string, number>
@@ -12,7 +15,7 @@ export default async function Page() {
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a])
   return (
     <>
-      <div className="flex flex-row divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 items-center justify-center md:space-x-6 md:divide-y-0">
+      <div className="flex flex-row items-center justify-center divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:space-x-6 md:divide-y-0">
         {/* <div className="space-x-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
             Tags
@@ -37,7 +40,17 @@ export default async function Page() {
         </div>
       </div>
 
-      <p className="mt-20 mx-auto leading-8 max-w-4xl text-xl text-gray-600 dark:text-gray-400 text-center">Please to contribute to the Notes collection by creating PDFs of the notes you  own and uploading <Link className='font-medium text-primary-500 hover:text-primary-600 dark:hover:text-primary-400' href={"/upload"}>here</Link>.</p>
+      <p className="mx-auto mt-20 max-w-4xl text-center text-xl leading-8 text-gray-600 dark:text-gray-400">
+        Please to contribute to the Notes collection by creating PDFs of the notes you own and
+        uploading{' '}
+        <Link
+          className="font-medium text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          href={'/upload'}
+        >
+          here
+        </Link>
+        .
+      </p>
     </>
   )
 }
