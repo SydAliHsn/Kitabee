@@ -1,5 +1,7 @@
 import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
+import 'react-responsive-modal/styles.css'
+import 'css/modal.css'
 
 import { Space_Grotesk } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
