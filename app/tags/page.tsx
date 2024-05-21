@@ -15,7 +15,7 @@ export default async function Page() {
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a])
   return (
     <>
-      <div className="flex flex-row items-center justify-center divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:space-x-6 md:divide-y-0">
+      <div className="mt-10 flex flex-row items-center justify-center divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:space-x-6 md:divide-y-0">
         {/* <div className="space-x-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
             Tags
@@ -40,7 +40,7 @@ export default async function Page() {
         </div>
       </div>
 
-      <p className="mx-auto mt-20 max-w-4xl text-center text-xl leading-8 text-gray-600 dark:text-gray-400">
+      <p className="mx-auto mt-20 max-w-4xl text-center text-lg leading-8 text-gray-600 dark:text-gray-400 sm:text-xl">
         Please to contribute to the Notes collection by creating PDFs of the notes you own and
         uploading{' '}
         <Link

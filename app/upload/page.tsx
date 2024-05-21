@@ -30,7 +30,7 @@ const upload = (): JSX.Element => {
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
             How to Upload Notes?
           </h2>
-          <ol className="list-decimal">
+          <ol className="ml-4 list-decimal">
             <li className="mx-auto mt-4 max-w-4xl leading-8 text-gray-600 dark:text-gray-300 xl:text-lg">
               Create a PDF file of your notes by taking photos of each page of the book and using an
               app like CamScanner to enhance the images and convert them into a PDF file.
