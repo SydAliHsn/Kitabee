@@ -16,22 +16,20 @@ const renderDropdownsRecursive = (dirStructure: recursiveDir[]) => {
       allBlogs.find((blog) => blog.slug.split('/').pop() === name.replace('.mdx', ''))?.path || '/'
 
     return (
-      <li
-        key={name}
-        className="rounded-lg *:bg-slate-100 *:transition-all *:hover:scale-[1.02] *:hover:bg-slate-200 *:dark:bg-slate-800 *:dark:hover:bg-slate-900"
-      >
+      <li key={name} className="folder-item rounded-lg *:bg-slate-100 *:dark:bg-slate-800">
         {type === 'folder' ? (
           <details className="mb-2 rounded-lg">
-            <summary className="cursor-pointer rounded-lg p-2 sm:p-3">
+            <summary className="cursor-pointer rounded-lg p-3">
               <span className="font-semibold">{formattedName}</span>
             </summary>
-            <ul className="ml-8 *:shadow-sm">
+
+            <ul className="folder-item folder ml-8 ">
               {children && renderDropdownsRecursive(children)}
-              {!children?.length && <p className="mb-2 p-2 sm:p-3">Empty...</p>}
+              {!children?.length && <p className="mb-2 p-3">Empty...</p>}
             </ul>
           </details>
         ) : (
-          <Link href={link} className="mb-2 block rounded-lg p-2 sm:p-3">
+          <Link href={link} className="mb-2 block rounded-lg p-3">
             <p className="text-gray-800 dark:text-gray-200">{formattedName}</p>
           </Link>
         )}
@@ -49,8 +47,19 @@ const page = (): JSX.Element => {
         Notes
       </h1>
 
-      <div className="mx-auto mt-12 max-w-2xl rounded-lg bg-gray-50 p-3 pt-5 text-gray-800 shadow-md dark:bg-gray-900/70 dark:text-gray-200 dark:shadow-gray-800/40 sm:p-4">
-        <ul className="*:shadow-sm">{renderDropdownsRecursive(dirStructure)}</ul>
+      <p className="mt-4 text-center">
+        You might like to{' '}
+        <Link
+          className="text-primary-500 underline hover:text-primary-600 dark:hover:text-primary-400"
+          href={'/tags'}
+        >
+          Search by Tags
+        </Link>{' '}
+        instead...
+      </p>
+
+      <div className="mx-auto mt-12 max-w-2xl rounded-lg bg-gray-50 p-2 pt-5 text-gray-800 shadow-md dark:bg-gray-900/70 dark:text-gray-200 dark:shadow-gray-800/40 sm:p-4">
+        <ul className="">{renderDropdownsRecursive(dirStructure)}</ul>
       </div>
 
       <p className="mx-auto mt-20 max-w-4xl text-center text-lg leading-8 text-gray-600 dark:text-gray-400 sm:text-xl">
